@@ -4,7 +4,7 @@
 #include <time.h>
 int i;
 int arr[10];
-int *p;
+int *p = &arr[9];
 int arr2[10];
 
 int main() {
@@ -20,9 +20,9 @@ int main() {
     }
 
     
-    for(i = 9; i >= 0; i--){
-        p = &arr[i];
-        arr2[9-i] = *p;
+    for(i = 0; i < 10; i++){
+        arr2[i] = *p;
+        p--;
     }
     
     printf("Reverse:\n");
